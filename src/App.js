@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/main.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div class='formCon'>
+        <h2>Sign Up</h2>
+        <form className='form'>
+          <section className='form__section'>
+            <labeL>Email</labeL>
+            <input type='email' required/>
+          </section>
+          <section className='form__section'>
+            <labeL>Password</labeL>
+            <input type='password' required/>
+          </section>
+          <section className='form__section'>
+            <labeL>Confirm Password</labeL>
+            <input type='password' required/>
+          </section>
+          <input type='submit' value='Sign Up'/>
+        </form>
+      </div>
     </div>
   );
 }

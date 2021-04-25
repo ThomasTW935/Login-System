@@ -1,0 +1,41 @@
+@import './_reset';
+
+.App{
+    display:grid;
+    place-content: center;
+    height: 100vh;
+}
+.formCon{
+    border: 1px solid  hsl(0, 0%, 80%);
+    padding: 1.5em 1em;
+    width: 50vw;
+    max-width: 400px;
+    min-height: 400px;
+    h2{
+        margin-bottom: 1em;
+        text-align:center;
+    }
+}
+.form{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    gap:1em;
+    input{
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 5px;
+        padding: .5em;
+        outline: none;
+        &[type='submit']{
+            background:hsl(219, 100%, 70%);
+            color: white;
+            cursor: pointer;
+        }
+    }
+    
+    &__section{
+        display:flex;
+        flex-direction: column;
+        gap: .5em;
+    }
+}
