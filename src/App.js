@@ -1,24 +1,25 @@
+import React from 'react'
+import Signup from './components/Signup'
+import Login from './components/Login'
+import Dashboard from './components/Dashboard'
 import './styles/main.css'
+import {AuthProvider} from './context/AuthContext'
+import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <div class='formCon'>
-        <h2>Log In</h2>
-        <form className='form'>
-          <section className='form__section'>
-            <labeL>Email</labeL>
-            <input type='email' required/>
-          </section>
-          <section className='form__section'>
-            <labeL>Password</labeL>
-            <input type='password' required/>
-          </section>
-          <button type='submit' className='btn btn-primary'>Log In</button>
-        </form>
-        <button type='button' className='btn btn-secondary'>Create New Account </button>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <Route exact path='/' component={Dashboard}/>
+              <Route path='/signup' component={Signup}/>
+              <Route path='/login' component={Login}/>
+            </Switch>
+          </AuthProvider>
+        </Router>
+        {/* <Login className='login'/> */}
       </div>
-    </div>
   );
 }
 

@@ -88,6 +88,14 @@ select {
   height: 100vh;
 }
 
+.error {
+  color: #a94342;
+  background-color: #f2dede;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: .7em .5em .5em;
+}
+
 .formCon {
   border: 1px solid #cccccc;
   padding: 1.5em 1em;
@@ -105,6 +113,7 @@ select {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: .5em;
+  background: white;
 }
 
 .formCon h2 {

@@ -5,6 +5,13 @@
     place-content: center;
     height: 100vh;
 }
+.error{
+    color: hsl(1, 44%, 46%);
+    background-color: hsl(0, 43%, 91%);
+    border-radius: 6px;
+    border: 1px solid transparent;
+    padding: .7em .5em .5em;
+}
 .formCon{
     border: 1px solid  hsl(0, 0%, 80%);
     padding: 1.5em 1em;
@@ -16,6 +23,7 @@
     display:flex;
     flex-direction:column;
     gap: .5em;
+    background:white;
     h2{
         margin-bottom: .5em;
     }
@@ -36,6 +44,7 @@
             }
         }
     }
+   
 }
 
 .form{
@@ -43,6 +52,7 @@
     flex-direction: column;
     justify-content:center;
     gap:1em;
+    
     input{
         border: 1px solid hsl(0, 0%, 80%);
         border-radius: 5px;
