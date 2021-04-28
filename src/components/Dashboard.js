@@ -20,6 +20,7 @@ export default function Dashboard() {
     return (
         <div className='formCon'>
             <h2>Profile</h2>
+            {error && <div className='error'>{error}</div>}
             <strong>Email:</strong>
             <span>{currentUser.email}</span>
             <Link to='/update-profile' className='btn' >Update</Link>

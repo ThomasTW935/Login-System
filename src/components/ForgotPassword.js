@@ -1,26 +1,26 @@
 import React,{useRef, useState} from 'react'
-import {Link,useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useAuth} from '../context/AuthContext'
 
 
-export default function Login() {
+export default function ForgotPassword() {
     const emailRef = useRef()
-    const passwordRef = useRef()
-    const {login} = useAuth()
+    const {resetPassword} = useAuth()
     const [error,setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const history = useHistory()
+    const [message, setMessage] = useState('')
 
     async function handleSubmit(e){
         e.preventDefault()
 
         try {
+            setMessage('')
             setError('')
             setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
-            history.push('/')
+            await resetPassword(emailRef.current.value)
+            setMessage('Check your email for further instructions')
         } catch {
-            setError(`Failed to log in`)
+            setError(`Failed to reset password`)
         }
         setLoading(false)
     }
@@ -28,21 +28,18 @@ export default function Login() {
 
     return (
         <div className='formCon'>
-            <h2>Log In</h2>
+            <h2>Password Recovery</h2>
             {error && <div className='error'>{error}</div>}
+            {message && <div className='message'>{message}</div>}
             <form className='form' onSubmit={handleSubmit}>
             <section className='form__section'>
                 <label>Email</label>
                 <input ref={emailRef} type='email' required/>
             </section>
-            <section className='form__section'>
-                <label>Password</label>
-                <input ref={passwordRef} type='password' required/>
-            </section>
-            <button disabled={loading}  type='submit' className='btn btn-primary'>Log In</button>
+           
+            <button disabled={loading}  type='submit' className='btn btn-primary'>Reset</button>
             </form>
-            <Link to='/forgot-password'>Forgot Password?</Link>
-            <Link to='/signup' className='btn btn-secondary'>Create New Account </Link>
+            <Link to='/login' className='btn btn-secondary'>Login </Link>
       </div>
     )
 }

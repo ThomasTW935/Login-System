@@ -96,13 +96,20 @@ select {
   padding: .7em .5em .5em;
 }
 
+.message {
+  color: #42a94a;
+  background-color: #def2e0;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: .7em .5em .5em;
+}
+
 .formCon {
   border: 1px solid #cccccc;
   padding: 1.5em 1em;
   width: 50vw;
   min-width: 350px;
   max-width: 400px;
-  min-height: 400px;
   -webkit-box-shadow: 0 3px 6px 3px #cccccc;
           box-shadow: 0 3px 6px 3px #cccccc;
   display: -webkit-box;
@@ -114,6 +121,7 @@ select {
           flex-direction: column;
   gap: .5em;
   background: white;
+  border-radius: 4px;
 }
 
 .formCon h2 {
